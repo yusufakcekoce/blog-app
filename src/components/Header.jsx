@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Home", href: "#", current: true },
@@ -32,13 +32,13 @@ function Header() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="/logo.png"
+                    className="block h-8 w-auto lg:hidden cursor-pointer"
+                    src="/images/logo.png"
                     alt="Your Company"
                   />
                   <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="/logo.png"
+                    className="hidden h-8 w-auto lg:block cursor-pointer"
+                    src="/images/logo.png"
                     alt="Your Company"
                   />
                 </div>
