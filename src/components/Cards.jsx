@@ -3,7 +3,7 @@ import React from "react";
 function Cards() {
   return (
     <div>
-      <div className="grid justify-items-center grid-cols-4">
+      <div className="grid justify-items-center xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
         <div class="max-w-sm bg-white border mt-5 mb-5 border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
             <img class="rounded-lg" src="/images/blog1.jpg" alt="" />
@@ -15,29 +15,25 @@ function Cards() {
                 Header: Lorem ipsum dolor
               </h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
               Title: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Ipsam, nemo? Excepturi neque et architecto eos nihil, repudiandae.
             </p>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                aria-hidden="true"
-                class="w-4 h-4 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns=""
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
+            <div className="flex">
+              <p>
+                <img
+                  className="h-9 w-9 rounded-full mt-2"
+                  src={
+                    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  }
+                  alt=""
+                />
+              </p>
+              <div className="ml-3">
+                <p>Name Username</p>
+                <p className="text-gray-500 ">December 10, 2022</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -52,29 +48,25 @@ function Cards() {
                 Header: Lorem ipsum dolor
               </h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
               Title: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Ipsam, nemo? Excepturi neque et architecto eos nihil, repudiandae.
             </p>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                aria-hidden="true"
-                class="w-4 h-4 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns=""
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
+            <div className="flex">
+              <p>
+                <img
+                  className="h-9 w-9 rounded-full mt-2"
+                  src={
+                    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  }
+                  alt=""
+                />
+              </p>
+              <div className="ml-3">
+                <p>Name Username</p>
+                <p className="text-gray-500 ">December 10, 2022</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -89,29 +81,25 @@ function Cards() {
                 Header: Lorem ipsum dolor
               </h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
               Title: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Ipsam, nemo? Excepturi neque et architecto eos nihil, repudiandae.
             </p>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                aria-hidden="true"
-                class="w-4 h-4 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns=""
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
+            <div className="flex">
+              <p>
+                <img
+                  className="h-9 w-9 rounded-full mt-2"
+                  src={
+                    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  }
+                  alt=""
+                />
+              </p>
+              <div className="ml-3">
+                <p>Name Username</p>
+                <p className="text-gray-500 ">December 10, 2022</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -126,29 +114,25 @@ function Cards() {
                 Header: Lorem ipsum dolor
               </h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
               Title: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Ipsam, nemo? Excepturi neque et architecto eos nihil, repudiandae.
             </p>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                aria-hidden="true"
-                class="w-4 h-4 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns=""
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
+            <div className="flex">
+              <p>
+                <img
+                  className="h-9 w-9 rounded-full mt-2"
+                  src={
+                    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  }
+                  alt=""
+                />
+              </p>
+              <div className="ml-3">
+                <p>Name Username</p>
+                <p className="text-gray-500 ">December 10, 2022</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -163,32 +147,27 @@ function Cards() {
                 Header: Lorem ipsum dolor
               </h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
               Title: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Ipsam, nemo? Excepturi neque et architecto eos nihil, repudiandae.
             </p>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                aria-hidden="true"
-                class="w-4 h-4 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns=""
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
+            <div className="flex">
+              <p>
+                <img
+                  className="h-9 w-9 rounded-full mt-2"
+                  src={
+                    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  }
+                  alt=""
+                />
+              </p>
+              <div className="ml-3">
+                <p>Name Username</p>
+                <p className="text-gray-500 ">December 10, 2022</p>
+              </div>
+            </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
