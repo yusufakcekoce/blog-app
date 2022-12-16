@@ -17,6 +17,6 @@ const BlogSchema = new Schema({
     photo: {
         type: [String],
     },
-});
+}, { timestamps: true });
 
 export default mongoose.model("Blog", BlogSchema);
