@@ -1,6 +1,9 @@
 import React from "react";
+import useFetch from "../hooks/useFetch";
 
 function Cards() {
+  const { data, loading, error } = useFetch("http://localhost:8800/api/blogs");
+  console.log(data);
   return (
     <div>
       <div className="grid justify-items-center xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
