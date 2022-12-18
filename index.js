@@ -6,6 +6,8 @@ import authRoute from "./routes/auth.js";
 import blogsRoute from "./routes/blogs.js";
 import usersRoute from "./routes/users.js";
 
+import cookieParser from "cookie-parser";
+
 const app = express();
 dotenv.config();
 
@@ -24,11 +26,12 @@ mongoose.connection.on("disconnected", () => {
 });
 
 // Middlewares
+app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/blogs", blogsRoute);
-app.use("/api/usersRoute", usersRoute);
+app.use("/api/users", usersRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
@@ -38,7 +41,7 @@ app.use((err, req, res, next) => {
     status: errorStatus,
     message: errorMessage,
     stack: err.stack,
-  }); 
+  });
 });
 
 app.listen(8800, () => {
