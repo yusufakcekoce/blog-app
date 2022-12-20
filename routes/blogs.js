@@ -10,13 +10,14 @@ import Blogs from "../models/Blogs.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
 import cors from "cors";
 
-const corsOptions = {
-  origin: "http://localhost:5173",
-  credentials: true,
-  optionSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: "http://localhost:5173",
+//   credentials: true,
+//   optionSuccessStatus: 200,
+// };
+
 const router = express.Router();
-router.use(cors(corsOptions));
+router.use(cors());
 
 // Create a blog
 router.post("/", verifyAdmin, createBlog);
