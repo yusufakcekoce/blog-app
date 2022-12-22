@@ -12,7 +12,22 @@ function CreateNew({ visible, onClose }) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    if (event.target.type === "file") {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({
+          ...formData,
+          [name]: reader.result,
+        });
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (event) => {
@@ -27,6 +42,7 @@ function CreateNew({ visible, onClose }) {
   };
 
   if (!visible) return null;
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
       <div className="bg-white p-3 w-1/2 rounded">
@@ -70,7 +86,7 @@ function CreateNew({ visible, onClose }) {
           />
 
           <label className="text-left">Title</label>
-          <input
+          <textarea
             required
             type="text"
             name="title"
@@ -81,7 +97,7 @@ function CreateNew({ visible, onClose }) {
           />
 
           <label className="text-left">Photo</label>
-          <input required type="file" name="photo" />
+          <input required type="file" name="photo" onChange={handleChange} />
 
           <div className="flex justify-end">
             <button

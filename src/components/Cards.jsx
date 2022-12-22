@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
 function Cards() {
@@ -32,9 +32,9 @@ function Cards() {
       ) : (
         data.map((blog) => (
           <div className="grid justify-items-center xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-            <div className="max-w-sm bg-white border mt-5 mb-5 border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div className="max-w-sm bg-white border mt-5 mb-5 border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 max-h-21 h-full">
               <Link to={`/blog/${blog._id}`}>
-                <img className="rounded-lg" src="/images/blog1.jpg" alt="" />
+                <img className="rounded-lg" src={blog.photo} alt="" />
 
                 <div className="p-5">
                   <p className="text-purple-800 font-medium">{blog.category}</p>
@@ -57,7 +57,7 @@ function Cards() {
                       />
                     </p>
                     <div className="ml-3">
-                      <p>Name Username</p>
+                      <p className="dark:text-white">Name Username</p>
                       <p className="text-gray-500 ">
                         {formatDate(blog.updatedAt)}
                       </p>

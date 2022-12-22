@@ -7,9 +7,15 @@ import blogsRoute from "./routes/blogs.js";
 import usersRoute from "./routes/users.js";
 
 import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import cors from "cors";
 
 const app = express();
 dotenv.config();
+app.use(cors());
+
+app.use(bodyParser.json({ limit: "2mb" }));
+app.use(bodyParser.urlencoded({ limit: "2mb", extended: true }));
 
 const connect = async () => {
   try {

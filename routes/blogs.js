@@ -13,7 +13,7 @@ const router = express.Router();
 router.use(cors());
 
 // Create a blog
-router.post("/",  createBlog);
+router.post("/", createBlog);
 
 // Update a blog
 router.put("/:id", verifyAdmin, updateBlog);

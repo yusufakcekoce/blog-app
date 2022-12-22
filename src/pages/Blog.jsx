@@ -27,7 +27,7 @@ function Blog() {
       ) : (
         <div className="flex flex-col justify-center items-center">
           <div className="flex flex-col justify-center items-center">
-            <img src="/images/blog1.jpg" className="w-1/2" />
+            <img src={data.photo} className="w-1/2" />
           </div>
 
           <div>
