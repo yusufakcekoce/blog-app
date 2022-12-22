@@ -6,21 +6,14 @@ import {
   getBlogs,
   updateBlog,
 } from "../controllers/blog.js";
-import Blogs from "../models/Blogs.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
 import cors from "cors";
-
-// const corsOptions = {
-//   origin: "http://localhost:5173",
-//   credentials: true,
-//   optionSuccessStatus: 200,
-// };
 
 const router = express.Router();
 router.use(cors());
 
 // Create a blog
-router.post("/", verifyAdmin, createBlog);
+router.post("/",  createBlog);
 
 // Update a blog
 router.put("/:id", verifyAdmin, updateBlog);

@@ -5,6 +5,15 @@ import useFetch from "../hooks/useFetch";
 function Cards() {
   const { data, loading, error } = useFetch("http://localhost:8800/api/blogs");
 
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("tr-TR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+  }
+
   return (
     <div>
       {loading ? (
@@ -23,8 +32,8 @@ function Cards() {
       ) : (
         data.map((blog) => (
           <div className="grid justify-items-center xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-              <div className="max-w-sm bg-white border mt-5 mb-5 border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <Link to={`/blog/${blog._id}`}>
+            <div className="max-w-sm bg-white border mt-5 mb-5 border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+              <Link to={`/blog/${blog._id}`}>
                 <img className="rounded-lg" src="/images/blog1.jpg" alt="" />
 
                 <div className="p-5">
@@ -35,7 +44,7 @@ function Cards() {
                   </h5>
 
                   <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
-                    {blog.title}
+                    {blog.subtitle}
                   </p>
                   <div className="flex">
                     <p>
@@ -49,12 +58,14 @@ function Cards() {
                     </p>
                     <div className="ml-3">
                       <p>Name Username</p>
-                      <p className="text-gray-500 ">{blog.updatedAt}</p>
+                      <p className="text-gray-500 ">
+                        {formatDate(blog.updatedAt)}
+                      </p>
                     </div>
                   </div>
                 </div>
-            </Link>
-              </div>
+              </Link>
+            </div>
           </div>
         ))
       )}
