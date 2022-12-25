@@ -35,11 +35,10 @@ function Blog() {
           </div>
 
           <div>
-            <p>{data.title}</p>
-          </div>
-
-          <div>
             <p>{data.subtitle}</p>
+          </div>
+          <div>
+            <p>{data.title}</p>
           </div>
         </div>
       )}
