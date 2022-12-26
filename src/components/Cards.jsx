@@ -15,7 +15,7 @@ function Cards() {
   }
 
   return (
-    <div>
+    <div className="grid justify-items-center xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
       {loading ? (
         <div className="flex justify-center items-center h-screen">
           <div className="flex flex-col justify-center items-center">
@@ -31,7 +31,7 @@ function Cards() {
         </div>
       ) : (
         data.map((blog) => (
-          <div className="grid justify-items-center xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+          <div className="mb-10" >
             <div className="max-w-sm bg-white border mt-5 mb-5 border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 max-h-21 h-full">
               <Link to={`/blog/${blog._id}`}>
                 <img className="rounded-lg" src={blog.photo} alt="" />

@@ -15,7 +15,7 @@ router.use(cors());
 router.put("/:id", verifyUser, updateUser);
 
 // Delete a User
-router.delete("/:id", verifyUser, deleteUser);
+router.delete("/:id", verifyAdmin, deleteUser);
 
 // Get a User
 router.get("/:id",  getUser);
