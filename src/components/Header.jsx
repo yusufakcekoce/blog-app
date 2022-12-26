@@ -1,8 +1,7 @@
 import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { UserContext } from "../context/AuthContext";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -14,7 +13,7 @@ function classNames(...classes) {
 }
 
 function Header() {
-  const { user, dispatch } = useContext(AuthContext);
+  const { user, dispatch } = useContext(UserContext);
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -120,10 +119,14 @@ function Header() {
                 ) : (
                   <div className="p-1">
                     <a href="/login" className="text-white p-4">
-                      <button>Login</button>
+                      <button className="text-blue-700 bg-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-white  dark:hover:bg-white dark:focus:ring-blue-800">
+                        Login
+                      </button>
                     </a>
                     <a href="/register" className="text-white">
-                      <button>Register</button>
+                      <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Register
+                      </button>
                     </a>
                   </div>
                 )}

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
+import { UserContext } from "../context/AuthContext";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -9,7 +9,7 @@ const Login = () => {
     password: undefined,
   });
 
-  const { loading, error, dispatch } = useContext(AuthContext);
+  const { loading, error, dispatch } = useContext(UserContext);
 
   const navigate = useNavigate();
 

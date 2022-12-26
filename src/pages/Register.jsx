@@ -1,37 +1,37 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
+import { UserContext } from "../context/AuthContext.jsx";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
     email: "",
-    profile:"",
+    profile: "",
   });
-  const { dispatch } = useContext(AuthContext);
+  const { dispatch } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     if (event.target.type === "file") {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-    setFormData({
-    ...formData,
-    [name]: reader.result,
-    });
-    };
-    reader.readAsDataURL(file);
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({
+          ...formData,
+          [name]: reader.result,
+        });
+      };
+      reader.readAsDataURL(file);
     } else {
-    setFormData({
-    ...formData,
-    [name]: value,
-    });
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
     }
-    };
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -68,6 +68,7 @@ const Register = () => {
 
                 <div className="mb-6">
                   <input
+                    required
                     type="text"
                     name="username"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -79,6 +80,7 @@ const Register = () => {
 
                 <div className="mb-6">
                   <input
+                    required
                     type="email"
                     name="email"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -90,6 +92,7 @@ const Register = () => {
 
                 <div className="mb-6">
                   <input
+                    required
                     type="password"
                     name="password"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -103,12 +106,15 @@ const Register = () => {
                   <p className="text-center font-semibold mx-4 mb-0"></p>
                 </div>
 
-                <input
-                  type="file"
-                  name="profile"
-                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  onChange={handleChange}
-                />
+                <div className=" form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                  <p>Profile Picture:</p>
+                  <input
+                    required
+                    type="file"
+                    name="profile"
+                    onChange={handleChange}
+                  />
+                </div>
 
                 <div className="text-center lg:text-left">
                   <button

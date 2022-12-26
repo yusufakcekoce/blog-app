@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 function CreateNew({ visible, onClose }) {
   const [formData, setFormData] = useState({
@@ -32,11 +33,20 @@ function CreateNew({ visible, onClose }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:8800/api/blogs", formData)
-      .then((response) => {
-        console.log(response);
-        window.location.reload();
+    axios.post("http://localhost:8800/api/blogs", formData).then((response) => {
+      console.log(response);
+      window.location.reload();
+    });
+    toast
+      .success("Blog added successfully", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
       })
       .catch((error) => console.log(error));
   };
@@ -106,6 +116,7 @@ function CreateNew({ visible, onClose }) {
             >
               Send
             </button>
+            <ToastContainer />
             <button
               onClick={onClose}
               className="text-white right-2.5 bottom-2.5 bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
