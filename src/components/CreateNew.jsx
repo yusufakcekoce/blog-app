@@ -37,8 +37,8 @@ function CreateNew({ visible, onClose }) {
       console.log(response);
       window.location.reload();
     });
-    toast
-      .success("Blog added successfully", {
+    try {
+      toast.success("Blog added successfully", {
         position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
@@ -47,8 +47,19 @@ function CreateNew({ visible, onClose }) {
         draggable: true,
         progress: undefined,
         theme: "light",
-      })
-      .catch((error) => console.log(error));
+      });
+    } catch (error) {
+      toast.error("Something went wrong", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   };
 
   if (!visible) return null;

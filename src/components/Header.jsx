@@ -5,7 +5,10 @@ import { UserContext } from "../context/AuthContext";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "My Blogs", href: "#", current: false },
+
+  /* will be held */
+  /* { name: "My Blogs", href: "#", current: false }, */
+  
 ];
 
 function classNames(...classes) {

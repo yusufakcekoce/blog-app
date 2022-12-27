@@ -6,7 +6,7 @@ import {
   getBlogs,
   updateBlog,
 } from "../controllers/blog.js";
-import { verifyAdmin } from "../utils/verifyToken.js";
+import { verifyAdmin, verifyUser } from "../utils/verifyToken.js";
 import cors from "cors";
 
 const router = express.Router();

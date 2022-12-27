@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
-function Cards() {
-  const { data, loading, error } = useFetch("http://localhost:8800/api/blogs");
-
+function Cards({ data, loading, error }) {
   function formatDate(dateString) {
     const date = new Date(dateString);
     return date.toLocaleDateString("tr-TR", {
@@ -15,7 +13,7 @@ function Cards() {
   }
 
   return (
-    <div className="grid justify-items-center xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+    <div className="grid grid-cols-none justify-center items-center">
       {loading ? (
         <div className="flex justify-center items-center h-screen">
           <div className="flex flex-col justify-center items-center">
@@ -30,8 +28,9 @@ function Cards() {
           </div>
         </div>
       ) : (
+        data &&
         data.map((blog) => (
-          <div className="mb-10" >
+          <div className="mb-10">
             <div className="max-w-sm bg-white border mt-5 mb-5 border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 max-h-21 h-full">
               <Link to={`/blog/${blog._id}`}>
                 <img className="rounded-lg" src={blog.photo} alt="" />
@@ -47,6 +46,8 @@ function Cards() {
                     {blog.subtitle}
                   </p>
                   <div className="flex">
+                    {/* will be held */}
+                    {/*
                     <p>
                       <img
                         className="h-9 w-9 rounded-full mt-2"
@@ -56,8 +57,13 @@ function Cards() {
                         alt=""
                       />
                     </p>
-                    <div className="ml-3">
-                      <p className="dark:text-white">Name Username</p>
+                    */}
+
+                    {/* will be held */}
+
+                    <div /* className="ml-3" */>
+                      {/* <p className="dark:text-white">Name Username</p> */}
+
                       <p className="text-gray-500 ">
                         {formatDate(blog.updatedAt)}
                       </p>
