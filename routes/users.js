@@ -18,7 +18,7 @@ router.put("/:id", verifyUser, updateUser);
 router.delete("/:id", verifyAdmin, deleteUser);
 
 // Get a User
-router.get("/:id",  getUser);
+router.get("/:id", getUser);
 
 // Get all User
 router.get("/", getUsers);

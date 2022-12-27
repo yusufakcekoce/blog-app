@@ -8,7 +8,6 @@ const navigation = [
 
   /* will be held */
   /* { name: "My Blogs", href: "#", current: false }, */
-  
 ];
 
 function classNames(...classes) {

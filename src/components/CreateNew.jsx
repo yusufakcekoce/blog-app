@@ -34,7 +34,6 @@ function CreateNew({ visible, onClose }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post("http://localhost:8800/api/blogs", formData).then((response) => {
-      console.log(response);
       window.location.reload();
     });
     try {
