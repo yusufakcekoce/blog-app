@@ -32,5 +32,6 @@ mongodb.config
 # Ignore JWT keys
 jwt.key
 
-# Ignore .env file
+# Ignore .env file this is the file you want to ignore
 .env
+
