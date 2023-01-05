@@ -19,7 +19,7 @@ router.post("/", createBlog);
 router.put("/:id", verifyAdmin, updateBlog);
 
 // Delete a blog
-router.delete("/:id", verifyAdmin, deleteBlog);
+router.delete("/:id", deleteBlog);
 
 // Get a blog
 router.get("/:id", getBlog);
