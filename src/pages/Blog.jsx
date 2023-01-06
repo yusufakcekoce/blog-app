@@ -1,24 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
+import { UserContext } from "../context/AuthContext";
 import useFetch from "../hooks/useFetch";
+import { ToastContainer, toast } from "react-toastify";
 
 function Blog() {
   const location = useLocation();
+  const { user } = useContext(UserContext);
   const id = location.pathname.split("/")[2];
   const { data, loading, error } = useFetch(
     `http://localhost:8800/api/blogs/${id}`
   );
 
-  function deleteBlog() {
-    fetch(`http://localhost:8800/api/blogs/${id}`, {
-      method: "DELETE",
-    }).then((response) => {
-      window.location.replace("/");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }
+  const deleteBlog = () => {
+    if (user) {
+      fetch(`http://localhost:8800/api/blogs/${id}`, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          window.location.replace("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      toast.error("Please login for delete this blog", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
 
   return (
     <div>
@@ -60,6 +77,7 @@ function Blog() {
             >
               Delete
             </button>
+            <ToastContainer />
 
             <button
               type="submit"
